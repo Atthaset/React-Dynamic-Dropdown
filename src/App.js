@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import Dropdown from "./Components/Dropdown";
+import Food from "./Components/Food";
 import './App.css';
+import {useState} from 'react'
+import MenuData from "./Data/MenuData";
 
 function App() {
+
+  const[food,setFood] = useState(MenuData)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Dropdown />
+      <div className="content">
+        {food.map((data,index)=>{
+          return <Food key={index} {...data}/>
+        })}
+      </div>
     </div>
   );
 }
