@@ -1,9 +1,9 @@
-const Dropdown = () => {
+const Dropdown = ({changeFood}) => {
     return (
         <nav>
             <h2>Dropdown Components</h2>
-            <select className="menu">
-                <option className="menulist">Menulist</option>
+            <select className="menu" onChange={changeFood}>
+                <option className="menulist">Menu</option>
                 <option className="puff-fry">Puff-Fry</option>
                 <option className="curry-tomyum">Curry-Tomyum</option>
                 <option className="steak">Steak</option>
